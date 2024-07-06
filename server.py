@@ -76,7 +76,7 @@ def process(update):
                         text += line
                 requests.post(f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage',json={'chat_id': user_id, 'text': text,'parse_mode': 'HTML'})
             elif message == 'Profile':
-                with open(f"assets/{'_'.join(name)}.jpg", 'rb') as file:
+                with open(f"photos/{'_'.join(name)}.jpg", 'rb') as file:
                     reply_markup = {'inline_keyboard': [[{'text': "Update Your Photo", 'callback_data': f"update"}, {'text': "Update Your Password", 'callback_data': f"change"}], [{'text': "Delete Your Account", 'callback_data': f"delete"}]]}
                     print(requests.post(f'https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto',data={'chat_id': 5934725286, 'caption': '_' + ' '.join(name) + '_ - ' + ' Student at *New Uzbekistan University*', 'protect_content': True, 'reply_markup': json.dumps(reply_markup), 'parse_mode': 'Markdown'}, files={'photo': file}).json())
             elif message == 'Notification':
