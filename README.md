@@ -16,6 +16,7 @@ Using flask framework, OpenCV & face_recognition libraries to recognize faces, u
    - BOT_ID - your telegram bot's ID
 
 # Future Plans
+- *Adding a function to send notification to the user via telegram bot to alert about the time they first entered the institution or warn about not attending*
 - *Increase the efficiency of the code*
 - *Training the model with the current database from many users*
 - *Change experimental parameters reflecting on the performance of the code in practice*
